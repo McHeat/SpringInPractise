@@ -1,0 +1,8 @@
+AOP：
+配置开启@EnableAspectJAutoProxy注解
+配置中注册类@Bean
+类开启注解@Aspect
+类内部使用@Pointcut声明连接点，表达式确定方法
+类内部使用@Before、@AfterReturning、@AfterThrowing、@After、@Around开启切点
+环绕通知：ProceedingJoinPoint，通过jp.proceed()
+参数传递：表达式中添加args，连接点及方法加注参数
