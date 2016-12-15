@@ -5,3 +5,7 @@ Spring连接数据库：
 	|-- Application级：通过PersistenceProvider的createEntityManagerFactory()创建EntitymanagerFactory
 	|-- Container级（推荐）：通过PersistenceProvider的createContainerEntityManagerFactory()创建EntitymanagerFactory
 	|-- 提供JpaVendorAdapter及数据源
+4.SpringData:继承JpaRepository<T.class, Serial>
+    |-- 使用断句
+    |-- @Query
+    |-- 使用Impl添加多表数据操作
