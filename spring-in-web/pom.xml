@@ -1,12 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.cn.mcheat.gen</groupId>
+
+    <parent>
+        <groupId>com.mcheat</groupId>
+        <artifactId>SpringInPractise</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <artifactId>spring-in-web</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
     <name>spring-in-web</name>
-    <url>http://maven.apache.org</url>
 
     <dependencyManagement>
         <dependencies>
@@ -67,15 +70,17 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>1.8.0.RELEASE</version>
+        </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>alimaven</id>
-            <name>aliyun maven</name>
-            <url>http://10.164.194.139:8081/nexus/content/repositories/public/</url>
-        </repository>
-    </repositories>
 
     <build>
         <finalName>spring-in-web</finalName>
