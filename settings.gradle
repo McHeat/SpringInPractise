@@ -1,6 +1,2 @@
 rootProject.name = 'SpringInPractise'
-include 'spring-data-jpa'
-include 'spring-in-action'
-include 'spring-in-web'
-include 'spring-quartz'
 include 'spbinaction'

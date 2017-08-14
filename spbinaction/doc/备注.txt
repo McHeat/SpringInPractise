@@ -1,0 +1,12 @@
+条件化注解：
+1.@ConditionalOnBean                配置了某个特定Bean
+2.@ConditionalOnMissingBean         没有配置特定的Bean
+3.@ConditionalOnClass               Classpath里有指定的类
+4.@ConditionalOnMissingClass        Classpath里缺少指定的类
+5.@ConditionalOnExpression          给定的SpEL表达式计算结果为true
+6.@ConditionalOnJava                Java的版本匹配特定值或一个范围值
+7.@ConditionalOnJndi                给定的Jndi位置必须存在一个，如果没有参数，则有JNDI InitialContext
+8.@ConditionalOnProperty            指定的配置属性要有一个明确的值
+9.@ConditionalOnResource            Classpath里有指定的资源
+10.@ConditionalOnWebApplication     这是一个Web应用程序
+11.@ConditionalOnNotWebApplication  这不是一个Web应用程序

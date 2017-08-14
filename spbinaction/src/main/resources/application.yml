@@ -1,0 +1,10 @@
+spring:
+  thymeleaf:
+    cache: false   # 开发中设置为false，防止模板修改时的缓存
+server:
+  port: 8443
+  #https设置
+#  ssl:
+#    key-store: file://.....
+#    key-store-password: letmein
+#    key-password: letmein
