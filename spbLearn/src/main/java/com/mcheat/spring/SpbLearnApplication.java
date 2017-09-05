@@ -1,13 +1,12 @@
-package com.mcheat;
+package com.mcheat.spring;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpbInActionApplication {
+public class SpbLearnApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpbInActionApplication.class, args);
+		SpringApplication.run(SpbLearnApplication.class, args);
 	}
 }

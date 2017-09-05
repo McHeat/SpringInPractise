@@ -1,0 +1,59 @@
+group 'com.mcheat.spring'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven { url 'http://10.164.194.139:8081/nexus/content/repositories/public/' }
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+// 自定义插件 BEGIN
+apply plugin: DateAndTimePlugin
+// 覆盖扩展属性
+dateAndTime {
+    timeFormat = 'HH:mm:ss.SSS'
+    dateFormat = 'MM/dd/yyyy'
+}
+
+// 继承Plugin<T>接口
+class DateAndTimePlugin implements Plugin<Project> {
+    void apply(Project project) {
+
+        project.extensions.create("dateAndTime", DateAndTimePluginExtension)
+
+        project.task('showTime') << {
+            println "Current time is " + new Date().format(project.dateAndTime.timeFormat)
+        }
+
+        project.tasks.create('showDate') << {
+            println "Current date is " + new Date().format(project.dateAndTime.dateFormat)
+        }
+    }
+}
+
+// 定义扩展属性
+class DateAndTimePluginExtension {
+    String timeFormat = "MM/dd/yyyyHH:mm:ss.SSS"
+    String dateFormat = "yyyy-MM-dd"
+}
+// 自定义插件 END
+
+

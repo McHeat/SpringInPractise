@@ -1,10 +1,9 @@
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
-repositories {
-	mavenLocal()
-	maven { url 'http://10.164.194.139:8081/nexus/content/repositories/public/' }
-	mavenCentral()
+jar {
+	baseName = project.name
+	version = project.version
 }
 
 dependencies {
@@ -12,7 +11,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-security')
-	compile('org.springframework.boot:spring-boot-starter-log4j:1.3.8.RELEASE')
+//	compile('org.springframework.boot:spring-boot-starter-log4j:1.3.8.RELEASE')
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
@@ -20,6 +19,6 @@ dependencies {
 }
 
 // 每一组依赖称为一个Configuration
-configurations {
-	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-}
+//configurations {
+//	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+//}

@@ -1,0 +1,18 @@
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+jar {
+	baseName = project.name
+	version = project.version
+	println baseName + '_' + version
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	runtime('com.h2database:h2')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.security:spring-security-test')
+}
