@@ -1,0 +1,37 @@
+server:
+  port: 8888
+spring:
+  rabbitmq:     # 定义rabbit连接
+    addresses: 10.164.197.208:5672,10.164.197.228:5672
+    password: admin123
+    username: admin
+    publisher-confirms: true
+  cloud:        # 定义cloud
+    stream:
+      bindings:
+        receiveChannel:
+          destination: wangjy_channel
+          contentType: text/plain
+          group: input
+#          binder: rabbit1
+        sendChannel:
+          destination: wangjy_channel
+          contentType: text/plain
+#          group: output
+#          binder: rabbit2
+#      binders:
+#        rabbit1:
+#          type: rabbit        # binder的类型，通常是META-INF/spring.binders文件中的key值
+#          #inheritEnvironment: true	# 配置是否继承应用的environment，默认true
+#          environment:        # 自定义binder的environment属性的根路径。binder所在context不是应用context的子类。默认empty
+#            spring:
+#              rabbitmq:
+#                host: <host1>
+#          defaultCandidate: true	# binder配置是否参与默认binder，或仅显式使用。可阻止binder配置影响默认处理过程
+#        rabbit2:
+#          type: rabbit
+#          environment:
+#            spring:
+#              rabbitmq:
+#                host: <host2>
+

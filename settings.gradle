@@ -2,4 +2,5 @@ rootProject.name = 'SpringInPractise'
 include 'spbinaction'
 include 'gradle'
 include 'spbLearn'
+include 'springcloudstream'
 
