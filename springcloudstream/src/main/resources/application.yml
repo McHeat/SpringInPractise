@@ -1,5 +1,6 @@
 server:
   port: 8888
+management.security.enabled: false
 spring:
   rabbitmq:     # 定义rabbit连接
     addresses: 10.164.197.208:5672,10.164.197.228:5672

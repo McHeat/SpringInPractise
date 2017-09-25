@@ -18,7 +18,6 @@ public class MessageSender {
     @Autowired
     private ChannelConfig channelConfig;
 
-
     public void send() {
         channelConfig.send().send(MessageBuilder.withPayload("12312").build());
     }
